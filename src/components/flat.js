@@ -6,11 +6,10 @@ import "./flat.css";
 class Flat extends React.Component {
   render() {
     const title = this.props.flat.price + this.props.flat.priceCurrency + " - " + this.props.flat.name;
-
     const style = {
-
+      backgroundImage: `url('${this.props.flat.imageUrl}')`
     };
-    // interpolation needs to be refactored
+    // interpolations need to be refactored
     // const title = PRICE + NAME;
     // we assume that we will get the info into the react app from an API, in a JSON format
     return (
