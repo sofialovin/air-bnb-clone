@@ -10,9 +10,16 @@ class App extends Component {
       flats: []
     };
   }
-  componentDidMount() {
-        console.log("did mount");
-      }
+  componentDidMount() {   //
+    const url = "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json"; // json to be used by component, with details of flats
+    fetch(url) // AJAX request
+      .then(response => response.json())
+      .then((data) => {  // data is an array of flats
+        this.setState({
+          flats: data   //we pass the keys we want to change,we want to change the flats and we assign it to the data we got
+        });  //so we change component state and React understands that the state changed and will render the component again
+      })
+  }
 
 
   render() {
