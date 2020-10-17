@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
 import Flat from './components/flat';
 // import logo from './logo.svg';
 import './App.css';
+
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +25,10 @@ class App extends Component {
 
 
   render() {
+    const center = {
+      lat: 48.8566,
+      lng: 2.3522
+    }
     return (
       <div className="app">
         <div className="main">
@@ -37,7 +43,11 @@ class App extends Component {
           </div>
          </div>
           <div className="map">
-
+            <GoogleMapReact
+              center={center}
+              defaultZoom={11}
+            >
+            </GoogleMapReact>
           </div>
       </div>
     );
